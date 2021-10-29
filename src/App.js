@@ -9,7 +9,9 @@ function App() {
   return (
     <div className="app">
       <Header />
-      {routes}
+      <main className='container'>
+        {routes}
+      </main>
       <Footer />
     </div>
   );

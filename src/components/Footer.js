@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
+
+import '../styles/Footer.scss';
 
 const footer = () => {
     return (
-        <div>
-            Footer
-        </div>
+        <footer className='footer'>
+            <h3>Movie App</h3>
+            <p>Movie Streaming Service Mock Application</p>
+        </footer>
     )
 }
 
