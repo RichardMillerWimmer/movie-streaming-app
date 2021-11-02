@@ -9,7 +9,7 @@ const MovieListing = () => {
     const movies = useSelector(getAllMovies);
     const series = useSelector(getAllSeries);
 
-    // console.log(movies?.Search)
+    console.log(movies?.Search)
 
     return (
         <section>
@@ -21,7 +21,7 @@ const MovieListing = () => {
                 <div className='movie-container'>
                     {
                         movies?.Search.map(movie => {
-                            return <MovieCard key={movie.title} data={movie} />
+                            return <MovieCard key={movie.imdbID} data={movie} />
                         })
                     }
                 </div>

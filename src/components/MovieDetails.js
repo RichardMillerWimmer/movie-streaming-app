@@ -11,7 +11,7 @@ const MovieDetails = () => {
     const fetchDetails = async (id) => {
         await movieApi.get(`?apiKey=${process.env.REACT_APP_API_KEY}&i=${params.id}&plot=full`)
             .then((res) => {
-                console.log(res.data);
+                // console.log(res.data);
                 setDetails(res.data)
             })
             .catch(err => console.log(err))
@@ -19,9 +19,14 @@ const MovieDetails = () => {
 
     useEffect(() => {
         fetchDetails()
+        return () => {
+            setDetails({})
+        }
     }, [params.id])
 
     return (
+        <>
+        {!details.Response ? <div>Loading...</div> :
         <section className='movie-section'>
             <div className='section-left'>
                 <h2 className='movie-title'>{details.Title}</h2>
@@ -60,6 +65,8 @@ const MovieDetails = () => {
             </div>
 
         </section>
+        }
+        </>
     )
 }
 
