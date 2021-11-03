@@ -9,8 +9,10 @@ const Home = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchtAsyncMovies());
-        dispatch(fetchtAsyncSeries());
+        const initSearchMovies = 'Harry';
+        const initSearchSeries = 'Friends';
+        dispatch(fetchtAsyncMovies(initSearchMovies));
+        dispatch(fetchtAsyncSeries(initSearchSeries));
     }, [dispatch])
 
     return (

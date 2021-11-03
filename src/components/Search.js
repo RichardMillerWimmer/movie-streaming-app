@@ -1,13 +1,21 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { fetchtAsyncMovies, fetchtAsyncSeries } from '../features/movieSlice'
 
 import '../styles/Search.scss'
 
 const Search = () => {
     const [term, setTerm] = useState('')
 
+    const dispatch = useDispatch();
+
     const submitHandler = (e) => {
         e.preventDefault()
-        console.log(term)
+        if (term === '') return alert('Please enter search term')
+        dispatch(fetchtAsyncMovies(term));
+        dispatch(fetchtAsyncSeries(term));
+        setTerm('')
+
     }
 
     return (
