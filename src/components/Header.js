@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Search from './Search';
 
 import '../styles/Header.scss';
 
@@ -11,6 +12,7 @@ const Header = () => {
             <Link to='/'>
                 <div className='logo'>Movie App</div>
             </Link>
+            <Search />
             <div className='user-image'>
                 <img src={user} alt='user profile' />
             </div>

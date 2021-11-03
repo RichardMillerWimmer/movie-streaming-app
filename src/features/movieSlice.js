@@ -6,16 +6,14 @@ const initialState = {
     series: {}
 }
 
-export const fetchtAsyncMovies = createAsyncThunk('movies/fetchAsyncMovies', async () => {
-    const movieQuery = 'Harry';
-    const res = await movieApi.get(`?apiKey=${process.env.REACT_APP_API_KEY}&s=${movieQuery}&type=movie`)
+export const fetchtAsyncMovies = createAsyncThunk('movies/fetchAsyncMovies', async (term) => {
+    const res = await movieApi.get(`?apiKey=${process.env.REACT_APP_API_KEY}&s=${term}&type=movie`)
 
     return res.data;
 })
 
-export const fetchtAsyncSeries = createAsyncThunk('movies/fetchAsyncSeries', async () => {
-    const seriesQuery = 'Harry';
-    const res = await movieApi.get(`?apiKey=${process.env.REACT_APP_API_KEY}&s=${seriesQuery}&type=series`)
+export const fetchtAsyncSeries = createAsyncThunk('movies/fetchAsyncSeries', async (term) => {
+    const res = await movieApi.get(`?apiKey=${process.env.REACT_APP_API_KEY}&s=${term}&type=series`)
 
     return res.data;
 })

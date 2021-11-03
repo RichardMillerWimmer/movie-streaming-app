@@ -26,46 +26,46 @@ const MovieDetails = () => {
 
     return (
         <>
-        {!details.Response ? <div>Loading...</div> :
-        <section className='movie-section'>
-            <div className='section-left'>
-                <h2 className='movie-title'>{details.Title}</h2>
-                <div className='movie-rating'>
-                    <span>IMDB Rating: {details.imdbRating}</span>
-                    <span>IMDB Votes: {details.imdbVotes}</span>
-                    <span>Runtime: {details.Runtime}</span>
-                    <span>Year: {details.Released}</span>
-                </div>
-                <div className='movie-plot'>{details.Plot}</div>
-                <div className='movie-info'>
-                    <div>
-                        <span>Director:</span>
-                        <p>{details.Director}</p>
+            {!details.Response ? <div>Loading...</div> :
+                <section className='movie-section'>
+                    <div className='section-left'>
+                        <h2 className='movie-title'>{details.Title}</h2>
+                        <div className='movie-rating'>
+                            <span className='fa fa-star'>IMDB Rating: {details.imdbRating}</span>
+                            <span className='fa fa-thumbs-up'>IMDB Votes: {details.imdbVotes}</span>
+                            <span className='fa fa-film'>Runtime: {details.Runtime}</span>
+                            <span className='fa fa-calendar'>Year: {details.Released}</span>
+                        </div>
+                        <div className='movie-plot'>{details.Plot}</div>
+                        <div className='movie-info'>
+                            <div>
+                                <span>Director:</span>
+                                <p>{details.Director}</p>
+                            </div>
+                            <div>
+                                <span>Stars:</span>
+                                <p>{details.Actors}</p>
+                            </div>
+                            <div>
+                                <span>Genres:</span>
+                                <p>{details.Genre}</p>
+                            </div>
+                            <div>
+                                <span>Languages:</span>
+                                <p>{details.Language}</p>
+                            </div>
+                            <div>
+                                <span>Awards:</span>
+                                <p>{details.Awards}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <span>Stars:</span>
-                        <p>{details.Actors}</p>
+                    <div className='section-right'>
+                        <img src={details.Poster} alt={details.Title} />
                     </div>
-                    <div>
-                        <span>Genres:</span>
-                        <p>{details.Genre}</p>
-                    </div>
-                    <div>
-                        <span>Languages:</span>
-                        <p>{details.Language}</p>
-                    </div>
-                    <div>
-                        <span>Awards:</span>
-                        <p>{details.Awards}</p>
-                    </div>
-                </div>
-            </div>
-            <div className='section-right'>
-                <img src={details.Poster} alt={details.Title} />
-            </div>
 
-        </section>
-        }
+                </section>
+            }
         </>
     )
 }

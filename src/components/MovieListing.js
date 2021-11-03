@@ -15,6 +15,7 @@ const MovieListing = () => {
 
     return (
         <section>
+
             {
                 !movies && <div>Loading...</div>
             }
