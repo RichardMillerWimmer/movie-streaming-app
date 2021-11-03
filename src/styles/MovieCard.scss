@@ -1,8 +1,12 @@
 @import "./variables.scss";
+
 .card-item {
   background: $color-primary;
   cursor: pointer;
   transition: all 0.3s;
+  height: 100%;
+  padding: 10px;
+  min-width: 200px;
 
   &:hover {
     transform: scale(1.1);
